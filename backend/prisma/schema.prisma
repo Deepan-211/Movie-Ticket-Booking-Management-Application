@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Movie {
+  id              Int      @id @default(autoincrement())
+  title           String
+  description     String   @default("")
+  posterUrl       String   @default("")
+  genre           String
+  durationMinutes Int
+  showType        String   // "Premium" | "Standard"
+  shows           Show[]
+}
+
+model Show {
+  id             Int              @id @default(autoincrement())
+  movieId        Int
+  movie          Movie            @relation(fields: [movieId], references: [id])
+  theatre        String
+  location       String
+  dateTime       DateTime
+  totalSeats     Int
+  seatsAvailable Int
+  pricePerSeat   Float
+  bookings       BookingRequest[]
+}
+
+model BookingRequest {
+  id            Int      @id @default(autoincrement())
+  customerName  String
+  customerEmail String
+  showId        Int
+  show          Show     @relation(fields: [showId], references: [id])
+  numTickets    Int
+  totalCost     Float
+  status        String   // Initial Stage -> Availability Check -> Approval -> Booking Execution -> Resolved
+  confirmed     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  resolvedAt    DateTime?
+  assignedQueue String   // "PremiumShowQueue" | "StandardShowQueue"
+  rejectionReason String?
+}
