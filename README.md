@@ -1,6 +1,6 @@
-# CineWave - Movie Ticket Booking Management
+# MovieShow - Movie Ticket Booking Management
 
-CineWave is a full-stack web application designed to manage movie ticket booking requests. It mimics an enterprise-grade case management workflow (similar to Pega) where every ticket booking request is treated as a case that transitions through a structured lifecycle.
+MovieShow is a full-stack web application designed to manage movie ticket booking requests. It mimics an enterprise-grade case management workflow (similar to Pega) where every ticket booking request is treated as a case that transitions through a structured lifecycle.
 
 ## Technology Stack
 - **Backend**: Node.js, Express, Prisma (SQLite)
