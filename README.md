@@ -82,3 +82,9 @@ This section explicitly maps each requested User Story to its implementation in 
 3. **Approval**: Case waits in the Work Queue for Staff action.
 4. **Booking Execution**: On Approval, seats are reserved/deducted in the DB.
 5. **Resolved/Rejected**: Final resolution stage where Correspondence (email) fires.
+
+
+## Documentation
+- [Overview](docs/overview.md)
+- [Frontend](docs/frontend.md)
+- [Backend](docs/backend.md)
