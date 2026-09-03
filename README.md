@@ -88,3 +88,7 @@ This section explicitly maps each requested User Story to its implementation in 
 - [Overview](docs/overview.md)
 - [Frontend](docs/frontend.md)
 - [Backend](docs/backend.md)
+
+
+## Getting Started
+Clone the repository and run `npm install` in both frontend and backend directories.
